@@ -135,9 +135,10 @@ git revert --abort              # прервать операцию revert
 
 ### Команды для работы с rebase
 ```bash
-git rebase <base>     # rebase (перенос коммитов) текущей ветки на указанную
+git rebase <branch>   # rebase (перенос коммитов) текущей ветки на указанную
 git rebase --abort    # прервать rebase и вернуть ветку в исходное состояние
 git rebase --continue # продолжить процесс rebase после разрешения конфликта
+git rebase --skip     # пропустить коммит при выполнении rebase
 ```
 
 ### Команды для отметы изменений
