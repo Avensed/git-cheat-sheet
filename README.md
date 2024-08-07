@@ -56,8 +56,8 @@ dir                         # показать список файлов и ка
 del <file>                  # удалить указанный <file>
 mkdir <folder>              # создать <folder>
 ren <old_name> <new_name>   # переименовать <file> или <folder>
-copy <source> <destination> # копировать <file's> из источника в назначение
-move <source> <destination> # переместить <file's> из источника в назначение
+copy <source> <destination> # копировать файлы из источника в назначение
+move <source> <destination> # переместить файлы из источника в назначение
 ```
 
 ### Команды для персонализации
@@ -113,16 +113,16 @@ git log --since=2.weeks          # показать коммиты за посл
 ```
 
 ```bash
-git diff               # показать несохраненные изменения
-git diff --cached      # показать изменения в индексе
+git diff                   # показать несохраненные изменения
+git diff --cached          # показать изменения в индексе
 git diff <commit> <commit> # показать разницу между двумя коммитами
 ```
 
 ```bash
-git reflog         # показать историю перемещений HEAD
-git shortlog       # краткий журнал коммитов по авторам
-git blame <file>   # показать автора каждой строки файла
-git show <commit>  # показать изменения в указанном коммите
+git reflog        # показать историю перемещений HEAD
+git shortlog      # краткий журнал коммитов по авторам
+git blame <file>  # показать автора каждой строки файла
+git show <commit> # показать изменения в указанном коммите
 ```
 
 ### Команды для добавления в индекс
@@ -160,8 +160,18 @@ git branch -m <branch>          # переименовать текущую ве
 git branch -m <branch> <branch> # переименовать ветку <branch> в <branch>
 git branch -d <branch>          # удалить ветку <branch>
 git branch -D <branch>          # удалить ветку <branch> принудительно
-git branch -v                   # список веток с последними коммитами
-git branch -vv                  # список веток с последними коммитами и отслеживаемыми ветками
+```
+
+```bash
+git branch -v          # список веток с последними коммитами
+git branch -vv         # список веток с последними коммитами и отслеживаемыми ветками
+git branch --merged    # показать ветки, которые слиты с текущей веткой
+git branch --no-merged # показать ветки, которые НЕ слиты с текущей веткой
+```
+
+```bash
+git branch -f <branch> <commit>   # переместить <branch> на <commit>
+git branch -f <branch> <branch>~2 # переместить <branch> на 2 коммита назад
 ```
 
 ```bash
@@ -171,7 +181,7 @@ git checkout -b <branch> <commit> # создать ветку <branch> на ос
 ```
 
 ```bash
-git push --set-upstream origin <branch> # скинуть <branch> на удаленный репозиторий
+git push --set-upstream origin <branch> # выслать <branch> на удаленный репозиторий
 git push origin --delete <branch>       # удалить <branch> на удаленном репозитории
 
 git merge-base <commit> <commit>        # найти общий базовый коммит для двух веток
