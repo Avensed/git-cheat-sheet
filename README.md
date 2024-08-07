@@ -119,12 +119,13 @@ git branch -m <branch>            # переименовать текущую в
 git branch -m <branch> <branch>   # переименовать ветку <branch> в <branch>
 git branch -d <branch>            # удалить ветку <branch>
 git branch -D <branch>            # удалить ветку <branch> принудительно
-git checkout <branch>             # переключиться на указанную ветку <branch>
-git checkout -b <branch>          # создать и переключиться на ветку <branch>
 git branch -v                     # список веток с последними коммитами
 git branch -vv                    # список веток с последними коммитами и отслеживаемыми ветками
 git push origin --delete <branch> # удалить ветку на удаленном репозитории
 git merge-base <commit> <commit>  # найти общий базовый коммит для двух веток
+git checkout <branch>             # переключиться на указанную ветку <branch>
+git checkout -b <branch>          # создать и переключиться на ветку <branch>
+git checkout -b <branch> <commit> # создать ветку <branch> на основе <commit> и переключиться на неё
 ```
 
 ### Команды для слияния веток
